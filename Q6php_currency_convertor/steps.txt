@@ -1,0 +1,22 @@
+Steps to Run the Program
+1. Install a Local Server Environment
+Install XAMPP or WAMP for PHP and MySQL support.
+
+2. Set Up the Project
+Save the file as currency.php.
+Place it in the htdocs folder (for XAMPP) or the www folder (for WAMP):
+Example path: C:\xampp\htdocs\currency.php
+
+3. Start the Server
+Open the XAMPP or WAMP control panel.
+Start the Apache server.
+
+4. Run the Application
+Open a browser and navigate to:
+arduino
+Copy code
+http://localhost/currency.php
+
+5. Interact with the Converter
+Enter an amount in USD.
+Click the "Convert to INR" button to see the converted value.

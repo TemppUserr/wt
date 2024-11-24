@@ -1,0 +1,22 @@
+Steps to Run the Program (README)
+Install XAMPP/WAMP:
+
+Download and install XAMPP or WAMP for local PHP and MySQL support.
+Start Services:
+
+Open XAMPP/WAMP and start Apache and MySQL.
+Set Up the Database:
+
+Open phpMyAdmin (http://localhost/phpmyadmin).
+Run the SQL script to create the employee_system database and employees table.
+Place Files in the Web Directory:
+
+Copy db.php, addemp.php, and listemp.php to the htdocs folder (e.g., C:\xampp\htdocs\q2).
+Access the Application:
+
+Open your browser and navigate to:
+bash
+Copy code
+http://localhost/q2/addemp.php
+Use the form to add employees and view the list.
+Let me know if you need further assistance!

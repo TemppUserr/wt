@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Chessboard</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        header, footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f4f4f4;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            width: 100%; /* Ensure the container takes full width */
+        }
+
+        .chessboard {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr); /* 8 equal columns */
+            grid-template-rows: repeat(8, 1fr);   /* 8 equal rows */
+            width: min(90vw, 500px); /* Resize to 90% of screen width but not exceed 500px */
+            aspect-ratio: 1; /* Ensure the chessboard is square */
+            border: 5px solid black; /* Add a border */
+        }
+
+        .chessboard div {
+            width: 100%;  /* Makes each cell fill its grid space */
+            height: 100%; /* Ensures cells are squares */
+        }
+
+        .black {
+            background-color: black;
+        }
+
+        .white {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Responsive Chessboard</h1>
+    </header>
+
+    <div class="container">
+        <div class="chessboard" id="chessboard">
+            <!-- Chessboard cells will be dynamically generated -->
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Chessboard Project</p>
+    </footer>
+
+    <script>
+        // Generate chessboard dynamically
+        const chessboard = document.getElementById('chessboard');
+
+        for (let row = 0; row < 8; row++) {
+            for (let col = 0; col < 8; col++) {
+                const cell = document.createElement('div');
+
+                // Alternating colors: (row + col) % 2 determines color
+                cell.className = (row + col) % 2 === 0 ? 'white' : 'black';
+
+                chessboard.appendChild(cell);
+            }
+        }
+    </script>
+</body>
+</html>

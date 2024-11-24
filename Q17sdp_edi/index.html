@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Tabs - VIT Projects</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">VIT Project Relevance</h1>
+        <p class="text-center">Explore the importance of SDP, EDI, DT, and Course Projects at VIT</p>
+
+        <!-- Navigation Pills -->
+        <ul class="nav nav-pills mb-3 justify-content-center" id="projectTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="sdp-tab" data-toggle="pill" href="#sdp" role="tab" aria-controls="sdp" aria-selected="true">SDP</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="edi-tab" data-toggle="pill" href="#edi" role="tab" aria-controls="edi" aria-selected="false">EDI</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="dt-tab" data-toggle="pill" href="#dt" role="tab" aria-controls="dt" aria-selected="false">DT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="course-tab" data-toggle="pill" href="#course" role="tab" aria-controls="course" aria-selected="false">Course Projects</a>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="projectTabsContent">
+            <!-- SDP Tab -->
+            <div class="tab-pane fade show active" id="sdp" role="tabpanel" aria-labelledby="sdp-tab">
+                <h3>Skill Development Projects (SDP)</h3>
+                <p>SDPs at VIT focus on enhancing technical and interpersonal skills through practical problem-solving.</p>
+                <ul>
+                    <li>Real-world simulations</li>
+                    <li>Team collaboration</li>
+                    <li>Multi-disciplinary approach</li>
+                </ul>
+            </div>
+
+            <!-- EDI Tab -->
+            <div class="tab-pane fade" id="edi" role="tabpanel" aria-labelledby="edi-tab">
+                <h3>Entrepreneurship Development Initiatives (EDI)</h3>
+                <p>EDIs aim to foster an entrepreneurial mindset and encourage innovative project development.</p>
+                <ul>
+                    <li>Business model generation</li>
+                    <li>Startup workshops</li>
+                    <li>Real-world problem-solving</li>
+                </ul>
+            </div>
+
+            <!-- DT Tab -->
+            <div class="tab-pane fade" id="dt" role="tabpanel" aria-labelledby="dt-tab">
+                <h3>Design Thinking (DT)</h3>
+                <p>Design Thinking projects focus on user-centered solutions through creative and iterative processes.</p>
+                <ul>
+                    <li>Empathy-driven problem solving</li>
+                    <li>Prototyping and testing</li>
+                    <li>Innovative designs</li>
+                </ul>
+            </div>
+
+            <!-- Course Projects Tab -->
+            <div class="tab-pane fade" id="course" role="tabpanel" aria-labelledby="course-tab">
+                <h3>Course Projects</h3>
+                <p>Course Projects are integrated into the curriculum to apply theoretical knowledge to practical challenges.</p>
+                <ul>
+                    <li>Subject-specific tasks</li>
+                    <li>Collaboration and presentations</li>
+                    <li>Knowledge enhancement</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

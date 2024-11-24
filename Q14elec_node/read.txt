@@ -1,0 +1,42 @@
+5. Package Configuration (package.json)
+Run the following command to create package.json:
+
+bash
+Copy code
+npm init -y
+Then, install the required dependencies:
+
+bash
+Copy code
+npm install express ejs
+
+How to Run the Project
+Step 1: Set Up Environment
+Install Node.js.
+Create a project folder and place all files as described in the structure.
+
+
+Step 2: Install Dependencies
+Navigate to the project folder in your terminal:
+bash
+Copy code
+cd project_folder
+Install dependencies:
+bash
+Copy code
+npm install
+
+
+Step 3: Start the Server
+Start the server:
+bash
+Copy code
+nodemon app.js
+The server will run at http://localhost:3000.
+
+
+Step 4: Test the Application
+Open your browser and go to http://localhost:3000.
+Enter the number of units in the input field.
+Click "Calculate Bill".
+View the calculated bill or error messages dynamically.

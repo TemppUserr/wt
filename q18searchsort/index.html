@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Operations</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Array Operations</h1>
+        <p class="text-center">Demonstration of searching and sorting arrays using JavaScript</p>
+
+        <!-- Tabs for Integer and Named Entity Arrays -->
+        <ul class="nav nav-tabs" id="arrayTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="integer-tab" data-toggle="tab" href="#integer" role="tab" aria-controls="integer" aria-selected="true">Integer Array</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="named-entity-tab" data-toggle="tab" href="#named-entity" role="tab" aria-controls="named-entity" aria-selected="false">Named Entity Array</a>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content mt-4" id="arrayTabsContent">
+            <!-- Integer Array Tab -->
+            <div class="tab-pane fade show active" id="integer" role="tabpanel" aria-labelledby="integer-tab">
+                <h3>Integer Array</h3>
+                <form id="integerForm">
+                    <div class="form-group">
+                        <label for="integerArray">Enter integers separated by commas:</label>
+                        <input type="text" id="integerArray" class="form-control" placeholder="e.g., 5,3,8,1,9">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Process Array</button>
+                </form>
+                <div id="integerResults" class="mt-4"></div>
+            </div>
+
+            <!-- Named Entity Array Tab -->
+            <div class="tab-pane fade" id="named-entity" role="tabpanel" aria-labelledby="named-entity-tab">
+                <h3>Named Entity Array</h3>
+                <form id="entityForm">
+                    <div class="form-group">
+                        <label for="entityArray">Enter names separated by commas:</label>
+                        <input type="text" id="entityArray" class="form-control" placeholder="e.g., John, Alice, Bob">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Process Array</button>
+                </form>
+                <div id="entityResults" class="mt-4"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

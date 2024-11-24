@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        header, footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f4f4f4;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .calculator {
+            border: 2px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers elements horizontally */
+        }
+
+        .calculator .screen {
+            width: 90%; /* Adjust width for centering */
+            height: 50px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: right;
+            font-size: 1.5em;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .calculator table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .calculator td {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .calculator button {
+            width: 60px;
+            height: 60px;
+            font-size: 1.2em;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .calculator button:hover {
+            background-color: #0056b3;
+        }
+
+        .calculator .operator {
+            background-color: #28a745;
+        }
+
+        .calculator .operator:hover {
+            background-color: #1e7e34;
+        }
+
+        .calculator .clear {
+            background-color: #dc3545;
+        }
+
+        .calculator .clear:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Simple Calculator</h1>
+    </header>
+
+    <div class="container">
+        <div class="calculator">
+            <input type="text" class="screen" id="screen" disabled>
+            <table>
+                <tr>
+                    <td><button onclick="appendNumber('7')">7</button></td>
+                    <td><button onclick="appendNumber('8')">8</button></td>
+                    <td><button onclick="appendNumber('9')">9</button></td>
+                    <td><button class="operator" onclick="appendOperator('/')">/</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="appendNumber('4')">4</button></td>
+                    <td><button onclick="appendNumber('5')">5</button></td>
+                    <td><button onclick="appendNumber('6')">6</button></td>
+                    <td><button class="operator" onclick="appendOperator('*')">*</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="appendNumber('1')">1</button></td>
+                    <td><button onclick="appendNumber('2')">2</button></td>
+                    <td><button onclick="appendNumber('3')">3</button></td>
+                    <td><button class="operator" onclick="appendOperator('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="appendNumber('0')">0</button></td>
+                    <td><button onclick="appendOperator('%')">%</button></td>
+                    <td><button class="clear" onclick="clearScreen()">AC</button></td> <!-- Renamed AC -->
+                    <td><button class="operator" onclick="appendOperator('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="clear" onclick="deleteLastDigit()">C</button></td> <!-- New C button -->
+                    <td colspan="2"><button style="width: 100%;" onclick="calculateResult()">=</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Simple Calculator Project</p>
+    </footer>
+
+    <script>
+        const screen = document.getElementById('screen');
+
+        // Append numbers to the screen
+        function appendNumber(number) {
+            screen.value += number;
+        }
+
+        // Append operators to the screen
+        function appendOperator(operator) {
+            screen.value += operator;
+        }
+
+        // Clear the screen (AC functionality)
+        function clearScreen() {
+            screen.value = '';
+        }
+
+        // Delete the last digit (C functionality)
+        function deleteLastDigit() {
+            screen.value = screen.value.slice(0, -1);
+        }
+
+        // Calculate the result
+        function calculateResult() {
+            try {
+                screen.value = eval(screen.value); // Use eval for quick arithmetic
+            } catch (error) {
+                screen.value = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>

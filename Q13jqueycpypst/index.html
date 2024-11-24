@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Demonstration (Non-Functional Create Button)</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery CDN -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        ul li {
+            margin: 5px 0;
+        }
+
+        .btn {
+            display: block;
+            width: 200px;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        #newElementContainer {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .input-box {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .input-box input {
+            width: 60%;
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>jQuery Demonstration</h1>
+        <h2>Copying Contents Between Lists</h2>
+
+        <div>
+            <ul id="sourceList">
+                <!-- Initially empty -->
+            </ul>
+
+            <ul id="targetList">
+                <!-- Initially empty -->
+            </ul>
+
+            <a class="btn" id="copyButton">Copy to Target List</a>
+            <a class="btn" id="resetButton">Reset to Empty State</a>
+        </div>
+
+        <div class="input-box">
+            <input type="text" id="newItemInput" placeholder="Enter new item">
+            <button class="btn" id="addItemButton">Add to Source List</button>
+        </div>
+
+        <h2>Create New Element</h2>
+        <div id="newElementContainer">
+            <a class="btn" id="createElementButton">Create New Element</a>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            const initialSourceList = ''; // Empty initial state
+
+            // Copy items from sourceList to targetList
+            $('#copyButton').click(function () {
+                $('#targetList').empty(); // Clear the target list
+                $('#sourceList li').each(function () {
+                    $('#targetList').append($(this).clone());
+                });
+                alert('Contents copied to the target list!');
+            });
+
+            // Reset the source and target lists to their empty state
+            $('#resetButton').click(function () {
+                $('#sourceList').html(initialSourceList); // Reset source list
+                $('#targetList').empty(); // Clear target list
+                alert('Lists have been reset to an empty state.');
+            });
+
+            // Add a new item to the source list
+            $('#addItemButton').click(function () {
+                const newItemText = $('#newItemInput').val().trim();
+                if (newItemText) {
+                    $('#sourceList').append(`<li>${newItemText}</li>`);
+                    $('#newItemInput').val(''); // Clear the input field
+                } else {
+                    alert('Please enter some text to add.');
+                }
+            });
+
+            // Create a new element dynamically (disabled intentionally)
+            $('#createElementButton').click(function () {
+                alert('This button is currently non-functional.');
+            });
+        });
+    </script>
+</body>
+</html>
